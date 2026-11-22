@@ -1,0 +1,28 @@
+# =============================================================================
+# Project configuration
+#
+#   cp config/config.example.yaml config/config.yaml   # then edit config.yaml
+#
+# config/config.yaml is git-ignored, so your real paths never get committed.
+# Relative paths are resolved against the repository root; absolute paths work too.
+# =============================================================================
+
+paths:
+  fastq_dir:        "data/fastq"               # <sample_id>_R1.fastq.gz / _R2.fastq.gz
+  alignment_dir:    "results/alignment"        # references/, aligned/, logs/
+  bulk_rna_workdir: "results/bulk_rna"         # counts.txt + gene_counts.csv (03_count_reads.sh), Metadata.csv;
+                                               # outputs of analysis/01_limma_voom_analysis.R
+  deseq2_workdir:   "results/bulk_rna/deseq2"  # outputs of analysis/02_deseq2_analysis.R
+  wgcna_workdir:    "results/bulk_rna/wgcna"   # outputs of analysis/03_wgcna.R
+  pydeseq2_workdir: "results/bulk_rna/pydeseq2" # outputs of analysis/04_pydeseq2_pca_weighted_analysis.ipynb
+
+samples:
+  bulk: "config/samples_bulk.csv"              # one row per sequenced library (replicate)
+
+star:
+  threads: 40
+  gencode_release: 44
+  sjdb_overhang: 99                            # read length - 1
+
+featurecounts:
+  strandedness: 0                              # 0 = unstranded, 1 = stranded, 2 = reverse (check your library kit)

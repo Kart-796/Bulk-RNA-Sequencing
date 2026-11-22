@@ -1,0 +1,20 @@
+# PyDESeq2 notebook (analysis/04_pydeseq2_pca_weighted_analysis.ipynb).
+#   conda env create -f envs/bulk_python.yml
+name: bulk_python
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - networkx
+  - pyyaml
+  - ipykernel
+  - pip
+  - pip:
+      - pydeseq2
+      - gseapy
+      - matplotlib-venn

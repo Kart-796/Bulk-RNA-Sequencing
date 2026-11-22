@@ -1,0 +1,11 @@
+# Alignment and counting (alignment/ scripts).
+#   conda env create -f envs/bulk_rnaseq.yml
+name: bulk_rnaseq
+channels: [conda-forge, bioconda]
+dependencies:
+  - star
+  - samtools
+  - subread          # featureCounts (>= 2.0.2 for --countReadPairs)
+  - python=3.11
+  - pyyaml
+  - wget
